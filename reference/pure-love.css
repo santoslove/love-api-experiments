@@ -58,6 +58,8 @@ p, td {
 }
 
 .function_heading {
+    margin-bottom: 14px;
+    margin-top: 6px;
     font-size: 16pt;
     line-height: 1;
 }
@@ -70,6 +72,10 @@ p, td {
 .ra_name,
 .constant_name {
     font-family: "Consolas", monospace;
+}
+
+.ra_table {
+    margin-bottom: 12px;
 }
 
 .ra_name {
@@ -93,7 +99,11 @@ p, td {
 }
 
 .section_navigation_link_minidescription {
-    padding: 2px 0;
+    padding: 1px 0;
+}
+
+.section_navigation_link_minidescription {
+    padding: 1px 0;
 }
 
 .section_navigation_subheading {
@@ -166,9 +176,9 @@ body {
 }
 
 .section_heading,
-.function_heading,
 .section_description, 
 .variant_description,
+.function_description,
 .synopsis {
     margin-bottom: 12px;
 }

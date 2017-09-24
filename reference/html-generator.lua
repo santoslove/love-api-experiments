@@ -1,8 +1,8 @@
-local api = require('api')
+local api = require('extra')(require('love-api.love-api'))
 
 local order = require('order')
 
-local FAST_MODE = true
+local FAST_MODE = false
 
 local output = {}
 
@@ -16,6 +16,54 @@ local blacklist = {
     ['love.video'] = true,
 }
 
+for _, module_ in ipairs(api.modules) do
+    local function removeFunctions(module_)
+        for functionIndex = #(module_.functions or {}), 1, -1 do
+            local function_ = module_.functions[functionIndex]
+            local remove = false
+            if blacklist[function_.fullname] then
+                remove = true
+            end
+
+            for variantIndex = #(function_.variants or {}), 1, -1 do
+                local variant = function_.variants[variantIndex]
+                local function f(key)
+                  for i = #(variant[key] or {}), 1, -1 do
+                      local a = variant[key][i]
+                      if blacklist[a.type] then
+                          remove = true
+                      end
+                  end
+                end
+                f('arguments')
+                f('returns')
+            end
+
+            if remove then
+                local a = table.remove(module_.functions, functionIndex)
+            end
+        end
+    end
+    removeFunctions(module_)
+    for typeIndex = #(module_.types or {}), 1, -1 do
+        local type_ = module_.types[typeIndex]
+        if blacklist[type_.name] then
+            table.remove(module_.types, typeIndex)
+        else
+            removeFunctions(type_)
+        end
+
+        function f(key)
+            for i = #(type_[key] or {}), 1, -1 do
+                if blacklist[type_[key][i].name] then
+                    table.remove(type_[key], i)
+                end
+            end
+        end
+        f('supertypes')
+        f('subtypes')
+    end
+end
 
 local function A(s, e)
     if e then
@@ -119,9 +167,20 @@ local function style(s, c) return class('style', s, c) end
 
 
 function getDescription(a)
+    if not a.description then
+        return
+    end
+
     local function makeLinks(a)
         local description = a.description
+        description = description:gsub('>', '&gt;')
+        description = description:gsub('<', '&lt;')
+
         if FAST_MODE then
+            return description
+        end
+
+        if not description:match('[%l%,] %u') and not description:match('%l[%.%:]%l') then
             return description
         end
 
@@ -138,22 +197,32 @@ function getDescription(a)
             return #a.fullname > #b.fullname
         end)
 
-        for _, linkItem in ipairs(linkable) do
-            if linkItem.fullname ~= a.fullname then -- So it doesn't link to itself.
-                local function f(n, nonPlural)
-                    description, n = description:gsub('([%W])'..n..'([\n%. \'%(%)%,])', '%1<a href="#'..encode(nonPlural)..'">'..encode(n)..'</a>%2')
-                end
+        local function f(t)
+            for _, linkItem in ipairs(t) do
+                if linkItem.fullname ~= a.fullname then -- So it doesn't link to itself.
+                    local function f(n, nonPlural)
+                        description = description:gsub('([%W])'..n..'([\n%. \'%(%)%,])', '%1<a href="#'..encode(nonPlural)..'">'..encode(n)..'</a>%2')
+                    end
 
-                local plural
-                if linkItem.fullname:sub(-1) == 'y' then
-                    plural = linkItem.fullname:sub(1, 2)..'ies'
-                else
-                    plural = linkItem.fullname..'s'
-                end
+                    local plural
+                    if linkItem.fullname:sub(-1) == 'y' then
+                        plural = linkItem.fullname:sub(1, 2)..'ies'
+                    else
+                        plural = linkItem.fullname..'s'
+                    end
 
-                f(linkItem.fullname, linkItem.fullname)
-                f(plural, linkItem.fullname)
+                    f(linkItem.fullname, linkItem.fullname)
+                    f(plural, linkItem.fullname)
+                end
             end
+        end
+
+        if description:match('[%l%,] %u') then
+            f(api.types)
+        end
+
+        if description:match('%l[%.%:]%l') then
+            f(api.functions)
         end
 
         return decode(description)
@@ -166,6 +235,7 @@ function getDescription(a)
     if description then
         a.description = description
     end
+
     return makeLinks(a)
 end
 
@@ -289,7 +359,7 @@ local function main()
     A(div('side_navigation'))
     A(p(aLink('love', '#love')))
     for _, module_ in ipairs(api.modules) do
-        if module_.name ~= 'love' and not blacklist[module_.fullname] then
+        if module_.name ~= 'love' then
             A(p(aLink(module_.name, '#'..module_.fullname)))
         end
     end
@@ -300,10 +370,6 @@ local function main()
     -- The 'first_section' class removes the padding and border radius from the top, so that scrolling to the top of the screen and clicking 'love' in the side navigation looks the same.
 
     local function doModuleOrTypeSection(mt)
-        if blacklist[mt.fullname] then
-            return
-        end
-
         A(div('section'..(mt.name == 'love' and ' first_section' or '')))
         A(p(a(mt.fullname, '#'..mt.fullname, mt.fullname), 'section_heading'))
         if mt.what == 'type' then
@@ -403,6 +469,7 @@ local function main()
 
     for _, module_ in ipairs(api.modules) do
         if module_.name == 'love' then
+            print(module_.name)
             doModuleOrTypeSection(module_)
             for _, type_ in ipairs(module_.types or {}) do
                 doModuleOrTypeSection(type_)
@@ -412,6 +479,7 @@ local function main()
 
     for _, module_ in ipairs(api.modules) do
         if module_.name ~= 'love' then
+            print(module_.name)
             doModuleOrTypeSection(module_)
             for _, type_ in ipairs(module_.types or {}) do
                 doModuleOrTypeSection(type_)
@@ -433,19 +501,22 @@ local function f(lc)
   if FAST_MODE then
       file:write(out)
   else
-      file:write((out:gsub('Ö', '&Ouml;'):gsub('é', '&eacute;'):gsub('>', '&gt;'):gsub('€', '&euro;')))
+      file:write((out:gsub('Ö', '&Ouml;'):gsub('é', '&eacute;'):gsub('€', '&euro;')))
   end
   file:close()
 end
 
 f()
 for _, lc in ipairs({'de', 'fr', 'ja', 'ko', 'pt', 'ru'}) do
+    print()
+    print(lc)
+    print()
     f(lc)
 end
 
 for _, class in ipairs(classes) do
     if not usedClasses[class] then
+        print()
         print('Class not used: '..class)
     end
 end
-
