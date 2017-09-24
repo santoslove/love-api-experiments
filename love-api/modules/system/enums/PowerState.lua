@@ -1,0 +1,83 @@
+return {
+    name = 'PowerState',
+    description = 'The basic state of the system\'s power supply.',
+    descriptiont = {
+        de = 'Der Grundzustand der Stromversorgung des Systems. [auto]',
+        fr = 'L\'état de base de l\'alimentation du système. [auto]',
+        ja = 'システムの電源供給における基本状態です。',
+        ko = '배터리를 사용하는 기기에서 간단한 전원 공급 상태를 나타냅니다.',
+        pt = 'O estado básico da fonte de alimentação do sistema. [auto]',
+        ru = 'Основное состояние источника питания системы. [auto]',
+    },
+    minidescription = 'The basic state of the system\'s power supply.',
+    minidescriptiont = {
+        de = 'Der Grundzustand der Stromversorgung des Systems. [auto]',
+        fr = 'L\'état de base de l\'alimentation du système. [auto]',
+        ja = 'システムの電源供給における基本状態です。',
+        ko = '배터리를 사용하는 기기에서 간단한 전원 공급 상태를 나타냅니다. [auto]',
+        pt = 'O estado básico da fonte de alimentação do sistema. [auto]',
+        ru = 'Основное состояние источника питания системы. [auto]',
+    },
+    constants = {
+        {
+            name = 'unknown',
+            description = 'Cannot determine power status.',
+            descriptiont = {
+                de = 'Der Leistungsstatus kann nicht ermittelt werden. [auto]',
+                fr = 'Impossible de déterminer l\'état de l\'alimentation. [auto]',
+                ja = '電源供給の方法を特定できません。',
+                ko = '상태를 알 수 없음.',
+                pt = 'Não é possível determinar o status de energia. [auto]',
+                ru = 'Невозможно определить состояние питания. [auto]',
+            },
+        },
+        {
+            name = 'battery',
+            description = 'Not plugged in, running on a battery.',
+            descriptiont = {
+                de = 'Nicht eingesteckt, läuft auf einer Batterie. [auto]',
+                fr = 'Non branché, fonctionnant sur une batterie. [auto]',
+                ja = '電源プラグが刺さっていませんが、バッテリで動作しています。',
+                ko = '전원이 공급되고 있지 않아 배터리를 소모하는 중.',
+                pt = 'Não conectado, funcionando em uma bateria. [auto]',
+                ru = 'Не подключен, работает на батарее. [auto]',
+            },
+        },
+        {
+            name = 'nobattery',
+            description = 'Plugged in, no battery available.',
+            descriptiont = {
+                de = 'Eingebettet, keine Batterie vorhanden. [auto]',
+                fr = 'Branché, pas de batterie disponible. [auto]',
+                ja = '電源プラグが刺さっていますが、バッテリがありません。',
+                ko = '전원이 공급되고 있긴 하나 배터리를 사용할 수 없음.',
+                pt = 'Conectado, sem bateria disponível. [auto]',
+                ru = 'Подключено, нет батареи. [auto]',
+            },
+        },
+        {
+            name = 'charging',
+            description = 'Plugged in, charging battery.',
+            descriptiont = {
+                de = 'Eingebaut, Ladebatterie. [auto]',
+                fr = 'Branché, charge de la batterie. [auto]',
+                ja = '電源プラグが刺さっており、バッテリは充電中です。',
+                ko = '전원이 공급되고 있으며 배터리 충전중.',
+                pt = 'Conectado, carregando bateria. [auto]',
+                ru = 'Загрязнен, заряжайте батарею. [auto]',
+            },
+        },
+        {
+            name = 'charged',
+            description = 'Plugged in, battery is fully charged.',
+            descriptiont = {
+                de = 'Eingebaut, Batterie ist voll aufgeladen. [auto]',
+                fr = 'Branché, la batterie est complètement chargée. [auto]',
+                ja = '電源プラグが刺さっており、バッテリは充電完了しています。',
+                ko = '전원이 공급되고 있으며 배터리가 완충되어 있음.',
+                pt = 'Conectado, a bateria está totalmente carregada. [auto]',
+                ru = 'Аккумулятор полностью заряжен. [auto]',
+            },
+        },
+    },
+}

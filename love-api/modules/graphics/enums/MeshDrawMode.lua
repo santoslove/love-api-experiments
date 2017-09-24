@@ -1,0 +1,71 @@
+return {
+    name = 'MeshDrawMode',
+    description = 'How a Mesh\'s vertices are used when drawing.',
+    descriptiont = {
+        de = 'Wie ein Mesh-Scheitel beim Zeichnen verwendet wird. [auto]',
+        fr = 'Comment les sommets d\'un Mesh sont utilisés lors du dessin. [auto]',
+        ja = 'Mesh の頂点で使用される描画方法。',
+        ko = '메쉬의 정점을 그리는 방법. [auto]',
+        pt = 'Como os vértices de um Mesh são usados ​​ao desenhar. [auto]',
+        ru = 'Как используются вершины Mesh при рисовании. [auto]',
+    },
+    minidescription = 'How a Mesh\'s vertices are used when drawing.',
+    minidescriptiont = {
+        de = 'Wie ein Mesh-Scheitel beim Zeichnen verwendet wird. [auto]',
+        fr = 'Comment les sommets d\'un Mesh sont utilisés lors du dessin. [auto]',
+        ja = 'Mesh の頂点で使用される描画方法。',
+        ko = '메쉬의 정점을 그리는 방법. [auto]',
+        pt = 'Como os vértices de um Mesh são usados ​​ao desenhar. [auto]',
+        ru = 'Как используются вершины Mesh при рисовании. [auto]',
+    },
+    constants = {
+        {
+            name = 'fan',
+            description = 'The vertices create a "fan" shape with the first vertex acting as the hub point. Can be easily used to draw simple convex polygons.',
+            descriptiont = {
+                de = 'Die Eckpunkte erzeugen eine "Fan" -Form, wobei der erste Eckpunkt als Hubpunkt fungiert. Kann leicht verwendet werden, um einfache konvexe Polygone zu zeichnen. [auto]',
+                fr = 'Les sommets créent une forme de "ventilateur" avec le premier sommet agissant comme point central. Peut être facilement utilisé pour dessiner des polygones convexes simples. [auto]',
+                ja = '中心点として作用する最初の頂点に対して"扇形"の頂点を作成します。単一の凸面がある多角形を容易に描画するために使用できます。',
+                ko = '버텍스는 첫 번째 버텍스가 허브 포인트 역할을하는 "팬"모양을 만듭니다. 간단한 볼록 다각형을 그릴 때 쉽게 사용할 수 있습니다. [auto]',
+                pt = 'Os vértices criam uma forma de "fã" com o primeiro vértice que atua como o ponto do cubo. Pode ser facilmente usado para desenhar polígonos convexos simples. [auto]',
+                ru = 'Вершины создают «веерную» форму с первой вершиной, действующей как точка центра. Легко использовать для рисования простых выпуклых многоугольников. [auto]',
+            },
+        },
+        {
+            name = 'strip',
+            description = 'The vertices create a series of connected triangles using vertices 1, 2, 3, then 3, 2, 4 (note the order), then 3, 4, 5 and so on.',
+            descriptiont = {
+                de = 'Die Ecken bilden eine Reihe von verbundenen Dreiecken unter Verwendung der Ecken 1, 2, 3, dann 3, 2, 4 (beachten Sie die Reihenfolge), dann 3, 4, 5 und so weiter. [auto]',
+                fr = 'Les sommets créent une série de triangles connectés en utilisant les sommets 1, 2, 3, puis 3, 2, 4 (notez l\'ordre), puis 3, 4, 5 et ainsi de suite. [auto]',
+                ja = '頂点 1, 2, 3, それに 3, 2, 4 (順序に注意してください), さらに 3, 4, 5 などを使用して連続で接続されている三角形の頂点を作成します。',
+                ko = '정점은 정점 1, 2, 3, 3, 2, 4 (순서를 기록), 3, 4, 5 등을 사용하여 일련의 연결된 삼각형을 만듭니다. [auto]',
+                pt = 'Os vértices criam uma série de triângulos conectados usando os vértices 1, 2, 3, depois 3, 2, 4 (observe a ordem), depois 3, 4, 5 e assim por diante. [auto]',
+                ru = 'Вершины создают ряд связанных треугольников, используя вершины 1, 2, 3, затем 3, 2, 4 (обратите внимание на порядок), затем 3, 4, 5 и т. Д. [auto]',
+            },
+        },
+        {
+            name = 'triangles',
+            description = 'The vertices create unconnected triangles.',
+            descriptiont = {
+                de = 'Die Ecken schaffen unverbundene Dreiecke. [auto]',
+                fr = 'Les sommets créent des triangles non connectés. [auto]',
+                ja = '頂点と接続されていない三角形を作成します。',
+                ko = '꼭지점은 연결되지 않은 삼각형을 만듭니다. [auto]',
+                pt = 'Os vértices criam triângulos não conectados. [auto]',
+                ru = 'Вершины создают несвязанные треугольники. [auto]',
+            },
+        },
+        {
+            name = 'points',
+            description = 'The vertices are drawn as unconnected points (see love.graphics.setPointSize.)',
+            descriptiont = {
+                de = 'Die Ecken werden als unverbundene Punkte gezeichnet (siehe love.graphics.setPointSize.) [auto]',
+                fr = 'Les sommets sont dessinés comme des points non connectés (voir love.graphics.setPointSize). [auto]',
+                ja = '頂点と接続されていない点を描画します (love.graphics.setPointSize を参照)。',
+                ko = '꼭지점은 연결되지 않은 점으로 그려집니다 (love.graphics.setPointSize 참조). [auto]',
+                pt = 'Os vértices são desenhados como pontos desconectados (veja love.graphics.setPointSize). [auto]',
+                ru = 'Вершины рисуются как несвязанные точки (см. Love.graphics.setPointSize.) [auto]',
+            },
+        },
+    },
+}

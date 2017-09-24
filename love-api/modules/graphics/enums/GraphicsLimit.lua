@@ -1,0 +1,71 @@
+return {
+    name = 'GraphicsLimit',
+    description = 'Types of system-dependent graphics limits checked for using love.graphics.getSystemLimits.',
+    descriptiont = {
+        de = 'Arten von systemabhängigen Grafikgrenzen für die Verwendung von love.graphics.getSystemLimits überprüft. [auto]',
+        fr = 'Les types de limites graphiques dépendantes du système sont vérifiés pour utiliser love.graphics.getSystemLimits. [auto]',
+        ja = 'love.graphics.getSystemLimits\n\nにより確認できるシステムに依存するグラフィック制限の種類。',
+        ko = 'love.graphics.getSystemLimits를 사용하여 시스템 종속 그래픽 제한 유형을 확인했습니다. [auto]',
+        pt = 'Tipos de limites de gráficos dependentes do sistema verificados para usar love.graphics.getSystemLimits. [auto]',
+        ru = 'Типы зависящих от системы графических ограничений, проверенных для использования love.graphics.getSystemLimits. [auto]',
+    },
+    minidescription = 'Types of system-dependent graphics limits checked for using love.graphics.getSystemLimits.',
+    minidescriptiont = {
+        de = 'Arten von systemabhängigen Grafikgrenzen für die Verwendung von love.graphics.getSystemLimits überprüft. [auto]',
+        fr = 'Les types de limites graphiques dépendantes du système sont vérifiés pour utiliser love.graphics.getSystemLimits. [auto]',
+        ja = 'システムに依存するグラフィック制限の種類。',
+        ko = 'love.graphics.getSystemLimits를 사용하여 시스템 종속 그래픽 제한 유형을 확인했습니다. [auto]',
+        pt = 'Tipos de limites de gráficos dependentes do sistema verificados para usar love.graphics.getSystemLimits. [auto]',
+        ru = 'Типы зависящих от системы графических ограничений, проверенных для использования love.graphics.getSystemLimits. [auto]',
+    },
+    constants = {
+        {
+            name = 'pointsize',
+            description = 'The maximum size of points.',
+            descriptiont = {
+                de = 'Die maximale Größe der Punkte. [auto]',
+                fr = 'La taille maximale des points. [auto]',
+                ja = 'point の最大の大きさ。',
+                ko = '포인트의 최대 크기. [auto]',
+                pt = 'O tamanho máximo dos pontos. [auto]',
+                ru = 'Максимальный размер точек. [auto]',
+            },
+        },
+        {
+            name = 'texturesize',
+            description = 'The maximum width or height of Images and Canvases.',
+            descriptiont = {
+                de = 'Die maximale Breite oder Höhe von Bildern und Leinwänden. [auto]',
+                fr = 'La largeur ou la hauteur maximale des images et des toiles. [auto]',
+                ja = 'Image および Canvas の最大の幅または高さ。',
+                ko = '이미지와 캔버스의 최대 너비 또는 높이. [auto]',
+                pt = 'A largura ou altura máxima de imagens e telas. [auto]',
+                ru = 'Максимальная ширина или высота изображений и холстов. [auto]',
+            },
+        },
+        {
+            name = 'multicanvas',
+            description = 'The maximum number of simultaneously active canvases (via love.graphics.setCanvas).',
+            descriptiont = {
+                de = 'Die maximale Anzahl der gleichzeitig aktiven Leinwände (via love.graphics.setCanvas). [auto]',
+                fr = 'Le nombre maximal de toiles simultanément actives (via love.graphics.setCanvas). [auto]',
+                ja = '同時に有効にできる Canvas の最大数 (love.graphics.setCanvas による)',
+                ko = '동시에 활성화 된 캔버스의 최대 개수입니다 (love.graphics.setCanvas를 통해). [auto]',
+                pt = 'O número máximo de telas simultaneamente ativas (via love.graphics.setCanvas). [auto]',
+                ru = 'Максимальное количество одновременно активных холстов (через love.graphics.setCanvas). [auto]',
+            },
+        },
+        {
+            name = 'canvasmsaa',
+            description = 'The maximum number of antialiasing samples for a Canvas.',
+            descriptiont = {
+                de = 'Die maximale Anzahl von Antialiasing-Samples für eine Leinwand. [auto]',
+                fr = 'Le nombre maximal d\'échantillons antialiasing pour un Canvas. [auto]',
+                ja = 'Canvas に対するアンチエイリアシングの最大サンプル数。',
+                ko = 'Canvas에 대한 앤티 앨리어싱 샘플의 최대 수입니다. [auto]',
+                pt = 'O número máximo de amostras de antialias para uma tela. [auto]',
+                ru = 'Максимальное количество образцов сглаживания для холста. [auto]',
+            },
+        },
+    },
+}

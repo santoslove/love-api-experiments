@@ -1,0 +1,71 @@
+return {
+    name = 'AreaSpreadDistribution',
+    description = 'Types of particle area spread distribution.',
+    descriptiont = {
+        de = 'Verschiedene Arten der Partikeldistribution im Raum.',
+        fr = 'Types de répartition de la surface des particules. [auto]',
+        ja = 'パーティクルにおける領域展開分布の種類。',
+        ko = '입자 면적 분포의 유형. [auto]',
+        pt = 'Tipos de distribuição de área de partículas espalhadas. [auto]',
+        ru = 'Типы распределения распространения площади частиц. [auto]',
+    },
+    minidescription = 'Types of particle area spread distribution.',
+    minidescriptiont = {
+        de = 'Verschiedene Arten der Partikeldistribution im Raum. [auto]',
+        fr = 'Types de répartition de la surface des particules. [auto]',
+        ja = 'パーティクルにおける領域展開分布の種類。',
+        ko = '입자 면적 분포의 유형. [auto]',
+        pt = 'Tipos de distribuição de área de partículas espalhadas. [auto]',
+        ru = 'Типы распределения распространения площади частиц. [auto]',
+    },
+    constants = {
+        {
+            name = 'uniform',
+            description = 'Uniform distribution.',
+            descriptiont = {
+                de = 'Uniforme Distribution.',
+                fr = 'Distribution uniforme. [auto]',
+                ja = '一様分布。',
+                ko = '균일 분포. [auto]',
+                pt = 'Distribuição uniforme. [auto]',
+                ru = 'Равномерное распределение. [auto]',
+            },
+        },
+        {
+            name = 'normal',
+            description = 'Normal (gaussian) distribution.',
+            descriptiont = {
+                de = 'Normale (gauß\'sche) Distribution.',
+                fr = 'Distribution normale (gaussienne). [auto]',
+                ja = '正規 (ガウシアン) 分布。',
+                ko = '정상 (가우스) 분포. [auto]',
+                pt = 'Distribuição normal (gaussiana). [auto]',
+                ru = 'Нормальное (гауссовское) распределение. [auto]',
+            },
+        },
+        {
+            name = 'ellipse',
+            description = 'Uniform distribution in an ellipse.',
+            descriptiont = {
+                de = 'Einheitliche Verteilung in einer Ellipse. [auto]',
+                fr = 'Distribution uniforme dans une ellipse. [auto]',
+                ja = '楕円形での一様分布。',
+                ko = '타원의 균일 분포. [auto]',
+                pt = 'Distribuição uniforme em uma elipse. [auto]',
+                ru = 'Равномерное распределение в эллипсе. [auto]',
+            },
+        },
+        {
+            name = 'none',
+            description = 'No distribution - area spread is disabled.',
+            descriptiont = {
+                de = 'Keine Distribution - Die Verteilung von Partikeln ist deaktiviert.',
+                fr = 'Aucune répartition - zone de diffusion n\'est désactivée. [auto]',
+                ja = '分布無し - 領域展開を無効にします。',
+                ko = '배포 금지 - 영역 확산이 비활성화됩니다. [auto]',
+                pt = 'Nenhuma distribuição - área espalhada é desativada. [auto]',
+                ru = 'Распространение не распространяется. [auto]',
+            },
+        },
+    },
+}

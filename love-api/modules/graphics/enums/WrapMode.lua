@@ -1,0 +1,71 @@
+return {
+    name = 'WrapMode',
+    description = 'How the image wraps inside a Quad with a larger quad size than image size. This also affects how Meshes with texture coordinates which are outside the range of [0, 1] are drawn, and the color returned by the Texel Shader function when using it to sample from texture coordinates outside of the range of [0, 1].',
+    descriptiont = {
+        de = 'Wie das Bild in einem Quad mit einer größeren Quad Größe als Bildgröße verpackt. Dies wirkt sich auch darauf aus, wie Meshes mit Texturkoordinaten, die außerhalb des Bereichs von {0, 1} liegen, gezeichnet werden und die von der Texel Shader-Funktion zurückgegebene Farbe bei der Verwendung von Texturkoordinaten außerhalb des Bereichs von {0, 1} verwendet wird. [auto]',
+        fr = 'Comment l\'image s\'emballe dans un Quad avec une taille de quad plus grande que la taille de l\'image. Cela affecte également la façon dont les mailles avec des coordonnées de texture qui sont en dehors de la plage de {0, 1} sont dessinées et la couleur renvoyée par la fonction Texel Shader lors de l\'utilisation pour échantillonner à partir de coordonnées de texture en dehors de la plage de {0, 1}. [auto]',
+        ja = '画像尺度より大きい四辺形の尺度で Quad の内側へ画像を加工する方法を指定します。同様に Mesh をテクスチャ座標 1 の範囲外で描画する方法、および 1 の範囲外でテクスチャ座標のサンプルを使用するときに Texel シェーダー関数で色を返すための方法に影響します。\n\nFile:ComparisonWraps.png',
+        ko = '이미지가 이미지 크기보다 큰 4 배 크기의 쿼드 내에서 어떻게 랩핑됩니까? 이것은 {0, 1}의 범위 밖에있는 텍스처 좌표로 메쉬를 그린 방법과 {0, 1} 범위를 벗어난 텍스쳐 좌표로 샘플링 할 때 텍셀 셰이더 함수에 의해 반환되는 색에 영향을 미칩니다. [auto]',
+        pt = 'Como uma imagem será acondicionada dentro de um Quad largo.',
+        ru = 'Как изображение покрывает область большого Quad\'а.',
+    },
+    minidescription = 'How the image wraps inside a Quad with a larger quad size than image size.',
+    minidescriptiont = {
+        de = 'Wie das Bild in einem Quad mit einer größeren Quad Größe als Bildgröße verpackt. [auto]',
+        fr = 'Comment l\'image s\'emballe dans un Quad avec une taille de quad plus grande que la taille de l\'image. [auto]',
+        ja = '大きい四辺形の内側に画像を加工する方法を指定します。',
+        ko = '이미지가 이미지 크기보다 큰 4 배 크기의 쿼드 내에서 어떻게 랩핑됩니까? 이것은 {0, 1}의 범위 밖에있는 텍스처 좌표로 메쉬를 그린 방법과 {0, 1} 범위를 벗어난 텍스쳐 좌표로 샘플링 할 때 텍셀 셰이더 함수에 의해 반환되는 색에 영향을 미칩니다. [auto]',
+        pt = 'Como uma imagem será acondicionada dentro de um Quad largo. [auto]',
+        ru = 'Как изображение покрывает область большого Quad\'а. [auto]',
+    },
+    constants = {
+        {
+            name = 'clamp',
+            description = 'How the image wraps inside a Quad with a larger quad size than image size. This also affects how Meshes with texture coordinates which are outside the range of [0, 1] are drawn, and the color returned by the Texel Shader function when using it to sample from texture coordinates outside of the range of [0, 1].',
+            descriptiont = {
+                de = 'Wie das Bild in einem Quad mit einer größeren Quad Größe als Bildgröße verpackt. Dies wirkt sich auch darauf aus, wie Meshes mit Texturkoordinaten, die außerhalb des Bereichs von {0, 1} liegen, gezeichnet werden und die von der Texel Shader-Funktion zurückgegebene Farbe bei der Verwendung von Texturkoordinaten außerhalb des Bereichs von {0, 1} verwendet wird. [auto]',
+                fr = 'Comment l\'image s\'emballe dans un Quad avec une taille de quad plus grande que la taille de l\'image. Cela affecte également la façon dont les mailles avec des coordonnées de texture qui sont en dehors de la plage de {0, 1} sont dessinées et la couleur renvoyée par la fonction Texel Shader lors de l\'utilisation pour échantillonner à partir de coordonnées de texture en dehors de la plage de {0, 1}. [auto]',
+                ja = 'テクスチャを固定します。一度だけ出現します。テクスチャの正常範囲外領域はテクスチャの輪郭線ピクセルに基づいて着色されます。',
+                ko = '이미지가 이미지 크기보다 큰 4 배 크기의 쿼드 내에서 어떻게 랩핑됩니까? 이것은 {0, 1}의 범위 밖에있는 텍스처 좌표로 메쉬를 그린 방법과 {0, 1} 범위를 벗어난 텍스쳐 좌표로 샘플링 할 때 텍셀 셰이더 함수에 의해 반환되는 색에 영향을 미칩니다. [auto]',
+                pt = 'Pinça a imagem. Aparece somente uma.',
+                ru = 'Фиксировать изображение. Повторяется только один раз',
+            },
+        },
+        {
+            name = 'repeat',
+            description = 'Repeat the image. Fills the whole available extent.',
+            descriptiont = {
+                de = 'Wiederholen Sie das Bild. Füllt das gesamte verfügbare Ausmaß. [auto]',
+                fr = 'Répétez l\'image. Remplit toute l\'étendue disponible. [auto]',
+                ja = 'テクスチャを反復します。利用可能な範囲全体を塗りつぶします。',
+                ko = '이미지를 반복하십시오. 사용 가능한 전체 범위를 채 웁니다. [auto]',
+                pt = 'Repete a imagem. Preenche todo extensão do espaço disponível.',
+                ru = 'Повторять изображение. Заполняет всю имеющуюся область.',
+            },
+        },
+        {
+            name = 'mirroredrepeat',
+            description = 'Repeat the texture, flipping it each time it repeats. May produce better visual results than the repeat mode when the texture doesn\'t seamlessly tile.',
+            descriptiont = {
+                de = 'Wiederholen Sie die Textur und spiegeln sie jedes Mal, wenn es wiederholt. Kann bessere visuelle Ergebnisse erzielen als der Wiederholungsmodus, wenn die Textur nicht nahtlos kachelt. [auto]',
+                fr = 'Répétez la texture, la bascule chaque fois qu\'elle se répète. Peut produire de meilleurs résultats visuels que le mode répétitif lorsque la texture ne se présente pas correctement. [auto]',
+                ja = '毎回反復する度に反転を行うことで、テクスチャを反復します。テクスチャが繋ぎ目のないタイルではない時に repeat 方式よりも良い視覚的な結果を生成するかもしれません。',
+                ko = '반복 할 때마다 텍스처를 뒤집어 반복합니다. 텍스처가 완벽하게 타일링되지 않을 때 반복 모드보다 시각적 인 결과가 더 좋을 수 있습니다. [auto]',
+                pt = 'Repita a textura, folheando-a sempre que repete. Pode produzir melhores resultados visuais do que o modo de repetição quando a textura não é de forma transparente. [auto]',
+                ru = 'Повторяйте текстуру, перелистывая ее каждый раз, когда она повторяется. Может давать лучшие визуальные результаты, чем повторный режим, когда текстура не плавно черепицей. [auto]',
+            },
+        },
+        {
+            name = 'clampzero',
+            description = 'Clamp the texture. Fills the area outside the texture\'s normal range with transparent black (or opaque black for textures with no alpha channel.)',
+            descriptiont = {
+                de = 'Klemme die Textur. Füllt den Bereich außerhalb des Normalbereichs der Textur mit transparentem schwarzem (oder opakem Schwarz für Texturen ohne Alphakanal). [auto]',
+                fr = 'Serrer la texture. Remplit la zone en dehors de la plage normale de la texture avec un noir transparent (ou noir opaque pour les textures sans canal alpha). [auto]',
+                ja = 'テクスチャを固定します。テクスチャの標準範囲外領域を透過な黒色 (または透過チャンネルがないテクスチャに対しては不透明な黒色) で塗りつぶします。',
+                ko = '텍스처를 클램핑하십시오. 텍스처의 표준 범위를 벗어난 영역을 투명한 검정색으로 채 웁니다 (또는 알파 채널이없는 텍스처의 경우 불투명 한 검정색). [auto]',
+                pt = 'Aperte a textura. Preenche a área fora da faixa normal da textura com preto transparente (ou preto opaco para texturas sem canal alfa). [auto]',
+                ru = 'Закрепите текстуру. Заполняет область вне нормального диапазона текстуры прозрачным черным (или непрозрачным черным для текстур без альфа-канала). [auto]',
+            },
+        },
+    },
+}

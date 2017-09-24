@@ -1,0 +1,71 @@
+return {
+    name = 'ShapeType',
+    description = 'The different types of Shapes, as returned by Shape:getType.',
+    descriptiont = {
+        de = 'Die verschiedenen Arten von Formen, wie von Shape zurückgegeben: getType. [auto]',
+        fr = 'Les différents types de Formes, renvoyés par Shape: getType. [auto]',
+        ja = 'Shape:getType により返される様々な形状の種類です。',
+        ko = 'Shape : getType에 의해 돌려 주어지는 Shape의 형태는 다릅니다. [auto]',
+        pt = 'Os diferentes tipos de formas, como retornado por Shape:getType.',
+        ru = 'Различные типы Фигур, возвращаемые функцией Shape:getType.',
+    },
+    minidescription = 'The different types of Shapes, as returned by Shape:getType.',
+    minidescriptiont = {
+        de = 'Die verschiedenen Arten von Formen, wie von Shape zurückgegeben: getType. [auto]',
+        fr = 'Les différents types de Formes, renvoyés par Shape: getType. [auto]',
+        ja = 'Shape:getType により返される様々な形状の種類です。',
+        ko = 'Shape : getType에 의해 돌려 주어지는 Shape의 형태는 다릅니다. [auto]',
+        pt = 'Os diferentes tipos de formas, como retornado por Shape:getType. [auto]',
+        ru = 'Различные типы Фигур, возвращаемые функцией Shape:getType. [auto]',
+    },
+    constants = {
+        {
+            name = 'circle',
+            description = 'The Shape is a CircleShape.',
+            descriptiont = {
+                de = 'Die Form ist eine CircleShape. [auto]',
+                fr = 'La forme est une forme CircleShape. [auto]',
+                ja = '形状は CircleShape です。',
+                ko = '모양은 원 모양입니다. [auto]',
+                pt = 'A forma é um CircleShape.',
+                ru = 'Окружность.',
+            },
+        },
+        {
+            name = 'polygon',
+            description = 'The Shape is a PolygonShape.',
+            descriptiont = {
+                de = 'Die Form ist eine Polygonform. [auto]',
+                fr = 'La forme est une forme de polygone. [auto]',
+                ja = '形状は PolygonShape です。',
+                ko = 'Shape는 PolygonShape입니다. [auto]',
+                pt = 'A forma é um PolygonShape.',
+                ru = 'Многоугольник.',
+            },
+        },
+        {
+            name = 'edge',
+            description = 'The Shape is a EdgeShape.',
+            descriptiont = {
+                de = 'Die Form ist eine EdgeShape. [auto]',
+                fr = 'La forme est un EdgeShape. [auto]',
+                ja = '形状は EdgeShape です。',
+                ko = '모양은 EdgeShape입니다. [auto]',
+                pt = 'O Shape é um EdgeShape. [auto]',
+                ru = 'Грань.',
+            },
+        },
+        {
+            name = 'chain',
+            description = 'The Shape is a ChainShape.',
+            descriptiont = {
+                de = 'Die Form ist eine ChainShape. [auto]',
+                fr = 'La forme est une chaîne de caractères. [auto]',
+                ja = '形状は ChainShape です。',
+                ko = '모양은 체인 셰이프입니다. [auto]',
+                pt = 'A Forma é um ChainShape. [auto]',
+                ru = 'Ломаная.',
+            },
+        },
+    },
+}

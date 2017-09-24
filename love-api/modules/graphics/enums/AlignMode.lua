@@ -1,0 +1,71 @@
+return {
+    name = 'AlignMode',
+    description = 'Text alignment.',
+    descriptiont = {
+        de = 'Bestimmt wie Text auf dem Bildschirm ausgerichtet werden soll.',
+        fr = 'Alignement du texte. [auto]',
+        ja = 'テキストの揃えかた。',
+        ko = '텍스트의 정렬 방식을 지정합니다.',
+        pt = 'Alinhamento do texto.',
+        ru = 'Выравнивание текста.',
+    },
+    minidescription = 'Text alignment.',
+    minidescriptiont = {
+        de = 'Bestimmt wie Text auf dem Bildschirm ausgerichtet werden soll. [auto]',
+        fr = 'Alignement du texte. [auto]',
+        ja = 'テキストの揃えかた。',
+        ko = '텍스트의 정렬 방식을 지정합니다. [auto]',
+        pt = 'Alinhamento do texto. [auto]',
+        ru = 'Выравнивание текста. [auto]',
+    },
+    constants = {
+        {
+            name = 'center',
+            description = 'Align text center.',
+            descriptiont = {
+                de = 'Text mittig ausrichten.',
+                fr = 'Aligner le centre de texte. [auto]',
+                ja = 'テキストの中央揃え。',
+                ko = '가운데 정렬.',
+                pt = 'Alinhamento centralizado.',
+                ru = 'Выравнивание текста по центру.',
+            },
+        },
+        {
+            name = 'left',
+            description = 'Align text left.',
+            descriptiont = {
+                de = 'Text links ausrichten.',
+                fr = 'Alignez du texte à gauche. [auto]',
+                ja = 'テキストの左揃え。',
+                ko = '왼쪽 정렬.',
+                pt = 'Alinhamento à esquerda.',
+                ru = 'Выравнивание текста по левому краю.',
+            },
+        },
+        {
+            name = 'right',
+            description = 'Align text right.',
+            descriptiont = {
+                de = 'Text rechts ausrichten.',
+                fr = 'Alignez le texte correctement. [auto]',
+                ja = 'テキストの右揃え。',
+                ko = '오른쪽 정렬.',
+                pt = 'Alinhamento à direita.',
+                ru = 'Выравнивание текста по правому краю.',
+            },
+        },
+        {
+            name = 'justify',
+            description = 'Align text both left and right.',
+            descriptiont = {
+                de = 'Text links oder rechts ausrichten.',
+                fr = 'Alignez le texte à la fois à gauche et à droite. [auto]',
+                ja = 'テキストの左右両端揃え。',
+                ko = '양쪽 정렬.',
+                pt = 'Alinhe o texto à esquerda e à direita. [auto]',
+                ru = 'Выровняйте текст как влево, так и вправо. [auto]',
+            },
+        },
+    },
+}

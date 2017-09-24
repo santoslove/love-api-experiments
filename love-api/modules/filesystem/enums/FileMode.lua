@@ -1,0 +1,71 @@
+return {
+    name = 'FileMode',
+    description = 'The different modes you can open a file in.',
+    descriptiont = {
+        de = 'Die verschiedenen Modi mit welchen eine Datei geöffnet werden kann.',
+        fr = 'Les différents modes dans lesquels vous pouvez ouvrir un fichier. [auto]',
+        ja = '様々なモードでファイルを開くことができるようにします。',
+        ko = '파일을 열 때 사용하는 여러 가지 모드입니다.',
+        pt = 'Os diferentes modos em que um File pode ser aberto.',
+        ru = 'Различные режимы открытия файла.',
+    },
+    minidescription = 'The different modes you can open a file in.',
+    minidescriptiont = {
+        de = 'Die verschiedenen Modi mit welchen eine Datei geöffnet werden kann. [auto]',
+        fr = 'Les différents modes dans lesquels vous pouvez ouvrir un fichier. [auto]',
+        ja = '様々なモードでファイルを開くことができるようにします。',
+        ko = '파일을 열 때 사용하는 여러 가지 모드입니다. [auto]',
+        pt = 'Os diferentes modos em que um File pode ser aberto. [auto]',
+        ru = 'Различные режимы открытия файла. [auto]',
+    },
+    constants = {
+        {
+            name = 'r',
+            description = 'Open a file for read.',
+            descriptiont = {
+                de = 'Öffnet eine Datei zum Lesen.',
+                fr = 'Ouvrez un fichier pour lire. [auto]',
+                ja = '読み込むためにファイルを開きます。',
+                ko = '읽기 전용 모드.',
+                pt = 'Abre um arquivo para leitura.',
+                ru = 'Открыть файл для чения.',
+            },
+        },
+        {
+            name = 'w',
+            description = 'Open a file for write.',
+            descriptiont = {
+                de = 'Öffnet eine Datei zum Schreiben.',
+                fr = 'Ouvrez un fichier pour l\'écriture. [auto]',
+                ja = '書き込むためにファイルを開きます。',
+                ko = '쓰기 전용 모드.',
+                pt = 'Abre um arquivo para escrita.',
+                ru = 'Открыть файл для записи.',
+            },
+        },
+        {
+            name = 'a',
+            description = 'Open a file for append.',
+            descriptiont = {
+                de = 'Öffnet eine Datei zum Anhängen von Daten.',
+                fr = 'Ouvrez un fichier pour ajouter. [auto]',
+                ja = '追記するためにファイルを開きます。',
+                ko = '추가 전용 모드.',
+                pt = 'Abre um arquivo para acréscimo.',
+                ru = 'Открыть файл для добавления.',
+            },
+        },
+        {
+            name = 'c',
+            description = 'Do not open a file (represents a closed file.)',
+            descriptiont = {
+                de = 'Öffnet die Datei nicht. Repräsentiert eine geschlossene Datei.',
+                fr = 'N\'ouvrez pas un fichier (représente un fichier fermé). [auto]',
+                ja = 'ファイルを開きません (ファイルを閉じるという意味です)。',
+                ko = '파일을 열지 않음(파일이 닫혀 있음을 나타냄).',
+                pt = 'Não abre um arquivo (representa um arquivo fechado).',
+                ru = 'Не открывайте файл (представляет закрытый файл.) [auto]',
+            },
+        },
+    },
+}
