@@ -122,7 +122,7 @@ else
     end
 
     print('serializing')
-    require('serializeextra')(api)
+    require('serialize')(api)
 end
 
 love.event.quit()
