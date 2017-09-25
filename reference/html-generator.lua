@@ -186,7 +186,7 @@ function getDescription(a)
 
 
     local function isType(s)
-        return s:match('[%l%,] %u')
+        return s:match('[%l%,] %u') or s:match('%/%u') or s:match('%u%/')
     end
 
     local function isFunction(s)
@@ -206,18 +206,20 @@ function getDescription(a)
         return (s:gsub(temp, ''))
     end
 
-    local function f(t)
+    local function f(t, isFunctionOrMethod)
         for _, linkItem in ipairs(t) do
             if linkItem.fullname ~= a.fullname then -- So it doesn't link to itself.
                 local function f(n, nonPlural)
-                    description, number = description:gsub('(%W)'..n..'([^%w%:%.])', '%1<a href="#'..encode(nonPlural)..'">'..encode(n)..'</a>%2')
-                    description = description:gsub('(%W)'..n..'(%. )', '%1<a href="#'..encode(nonPlural)..'">'..encode(n)..'</a>%2')
+                    description = description:gsub('(%W)'..n..'(%W)', '%1<a href="#'..encode(nonPlural)..'">'..encode(n)..'</a>%2')
+                    description = description:gsub('(%W)'..n..'$', '%1<a href="#'..encode(nonPlural)..'">'..encode(n)..'</a>')
                     description = description:gsub('^'..n..'(%W)', '<a href="#'..encode(nonPlural)..'">'..encode(n)..'</a>%1')
                 end
 
                 local plural
                 if linkItem.fullname:sub(-1) == 'y' then
                     plural = linkItem.fullname:sub(1, 2)..'ies'
+                elseif linkItem.fullname:sub(-1) == 's' then
+                    plural = linkItem.fullname..'es'
                 else
                     plural = linkItem.fullname..'s'
                 end
@@ -236,12 +238,17 @@ function getDescription(a)
         return #a.fullname > #b.fullname
     end)
 
-    if isType(description) then
-        f(api.types)
-    end
+    table.sort(api.enums, function(a, b)
+        return #a.fullname > #b.fullname
+    end)
 
     if isFunction(description) then
-        f(api.allfunctions)
+        f(api.allfunctions, true)
+    end
+
+    if isType(description) then
+        f(api.types, false)
+        f(api.enums, false)
     end
 
     return decode(description)
