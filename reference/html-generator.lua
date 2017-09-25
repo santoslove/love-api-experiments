@@ -28,12 +28,12 @@ for _, module_ in ipairs(api.modules) do
             for variantIndex = #(function_.variants or {}), 1, -1 do
                 local variant = function_.variants[variantIndex]
                 local function f(key)
-                  for i = #(variant[key] or {}), 1, -1 do
-                      local a = variant[key][i]
-                      if blacklist[a.type] then
-                          remove = true
-                      end
-                  end
+                    for i = #(variant[key] or {}), 1, -1 do
+                        local a = variant[key][i]
+                        if blacklist[a.type] then
+                            remove = true
+                        end
+                    end
                 end
                 f('arguments')
                 f('returns')
@@ -171,163 +171,171 @@ function getDescription(a)
         return
     end
 
-    local function makeLinks(a)
-        local description = a.description
-        description = description:gsub('>', '&gt;')
-        description = description:gsub('<', '&lt;')
+    local description = a.description
 
-        if FAST_MODE then
-            return description
-        end
-
-        if not description:match('[%l%,] %u') and not description:match('%l[%.%:]%l') then
-            return description
-        end
-
-        -- So that Joystick:isGamepadDown (for example) isn't linked twice for its own name and the substring Joystick:isGamepad, the name is temporarily "encoded".
-        local temp = 'TEMP!'
-        local function encode(s)
-            return (s:sub(1, 1)..temp..s:sub(2))
-        end
-        local function decode(s)
-            return (s:gsub(temp, ''))
-        end
-
-        table.sort(api.allfullnames, function(a, b)
-            return #a.fullname > #b.fullname
-        end)
-
-        local function f(t)
-            for _, linkItem in ipairs(t) do
-                if linkItem.fullname ~= a.fullname then -- So it doesn't link to itself.
-                    local function f(n, nonPlural)
-                        description = description:gsub('([%W])'..n..'([\n%. \'%(%)%,])', '%1<a href="#'..encode(nonPlural)..'">'..encode(n)..'</a>%2')
-                    end
-
-                    local plural
-                    if linkItem.fullname:sub(-1) == 'y' then
-                        plural = linkItem.fullname:sub(1, 2)..'ies'
-                    else
-                        plural = linkItem.fullname..'s'
-                    end
-
-                    f(linkItem.fullname, linkItem.fullname)
-                    f(plural, linkItem.fullname)
-                end
-            end
-        end
-
-        if description:match('[%l%,] %u') then
-            f(api.types)
-        end
-
-        if description:match('%l[%.%:]%l') then
-            f(api.functions)
-        end
-
-        return decode(description)
-    end
-
-    local description
     if a.descriptiont and a.descriptiont[languageCode] then
         description = (a.descriptiont[languageCode]:gsub(' %[auto%]$', ''))
     end
-    if description then
-        a.description = description
+
+    description = description:gsub('>', '&gt;')
+    description = description:gsub('<', '&lt;')
+
+    if FAST_MODE then
+        return description
     end
 
-    return makeLinks(a)
+
+    local function isType(s)
+        return s:match('[%l%,] %u')
+    end
+
+    local function isFunction(s)
+        return s:match('%l[%.%:]%l')
+    end
+
+    if not isType(description) and not isFunction(description) then
+        return description
+    end
+
+    -- So that Joystick:isGamepadDown (for example) isn't linked twice for its own name and the substring Joystick:isGamepad, the name is temporarily "encoded".
+    local temp = 'TEMP!'
+    local function encode(s)
+        return (s:sub(1, 1)..temp..s:sub(2))
+    end
+    local function decode(s)
+        return (s:gsub(temp, ''))
+    end
+
+    local function f(t)
+        for _, linkItem in ipairs(t) do
+            if linkItem.fullname ~= a.fullname then -- So it doesn't link to itself.
+                local function f(n, nonPlural)
+                    description, number = description:gsub('(%W)'..n..'([^%w%:%.])', '%1<a href="#'..encode(nonPlural)..'">'..encode(n)..'</a>%2')
+                    description = description:gsub('(%W)'..n..'(%. )', '%1<a href="#'..encode(nonPlural)..'">'..encode(n)..'</a>%2')
+                    description = description:gsub('^'..n..'(%W)', '<a href="#'..encode(nonPlural)..'">'..encode(n)..'</a>%1')
+                end
+
+                local plural
+                if linkItem.fullname:sub(-1) == 'y' then
+                    plural = linkItem.fullname:sub(1, 2)..'ies'
+                else
+                    plural = linkItem.fullname..'s'
+                end
+
+                f(linkItem.fullname, linkItem.fullname)
+                f(plural, linkItem.fullname)
+            end
+        end
+    end
+
+    table.sort(api.allfunctions, function(a, b)
+        return #a.fullname > #b.fullname
+    end)
+
+    table.sort(api.types, function(a, b)
+        return #a.fullname > #b.fullname
+    end)
+
+    if isType(description) then
+        f(api.types)
+    end
+
+    if isFunction(description) then
+        f(api.allfunctions)
+    end
+
+    return decode(description)
 end
 
 local function doFunctions(functions)
-  for _, function_ in ipairs(functions) do
+    for _, function_ in ipairs(functions) do
 
-    local function doReturnsAndArguments(variant, key)
-        local t = variant[key]
-        if #t == 0  then
-            return
-        end
+        local function doReturnsAndArguments(variant, key)
+            local t = variant[key]
+            if #t == 0    then
+                return
+            end
 
-        for _, ra in ipairs(t) do
-            local function f(ra, prefix)
-                A(tr(''))
-                local namePart = prefix..ra.name
-                if ra.default then
-                    namePart = namePart..' '..span('('..ra.default..')', 'default')
-                end
-                A(td(namePart, key.. ' ra_name'))
+            for _, ra in ipairs(t) do
+                local function f(ra, prefix)
+                    A(tr(''))
+                    local namePart = prefix..ra.name
+                    if ra.default then
+                        namePart = namePart..' '..span('('..ra.default..')', 'default')
+                    end
+                    A(td(namePart, key.. ' ra_name'))
 
-                local typePart = {}
-                for match in (ra.type..'/'):gmatch('(.-)%/') do
-                    local found = false
-                    for _, item in ipairs(api.allfullnames) do
-                        if match == item.fullname then
-                            table.insert(typePart, aLink(item.name, '#'..item.name))
-                            found = true
-                            break
+                    local typePart = {}
+                    for match in (ra.type..'/'):gmatch('(.-)%/') do
+                        local found = false
+                        for _, item in ipairs(api.allfullnames) do
+                            if match == item.fullname then
+                                table.insert(typePart, aLink(item.name, '#'..item.name))
+                                found = true
+                                break
+                            end
+                        end
+                        if not found then
+                            table.insert(typePart, match)
                         end
                     end
-                    if not found then
-                        table.insert(typePart, match)
+                    A(td(table.concat(typePart, ' / '), 'ra_type'))
+
+                    A(td(getDescription(ra)))
+                    A(tr())
+
+                    for i, v in ipairs(ra.table or {}) do
+                        f(v, prefix..ra.name..'.')
                     end
                 end
-                A(td(table.concat(typePart, ' / '), 'ra_type'))
 
-                A(td(getDescription(ra)))
-                A(tr())
+                f(ra, '')
+            end
+        end
 
-                for i, v in ipairs(ra.table or {}) do
-                    f(v, prefix..ra.name..'.')
+        A(div('section'))
+        A(p(a(span(function_.prefix)..'<wbr>'..function_.name, '#'..function_.fullname, function_.fullname), 'function_heading'))
+        A(p(getDescription(function_), 'function_description'))
+
+        for _, variant in ipairs(function_.variants) do
+
+            local function makeList(args, class)
+                local argumentList = ''
+                for argIndex, arg in ipairs(args or {}) do
+                    argumentList = argumentList..span(arg.name, class)
+                    if argIndex ~= #args then
+                        argumentList = argumentList..', '
+                    end
                 end
+                return argumentList
             end
 
-            f(ra, '')
-        end
-    end
+            local returnList = ''
+            if #variant.returns > 0 then
+                returnList = makeList(variant.returns, 'returns')
+                returnList = returnList..' = '
+            end
 
-    A(div('section'))
-    A(p(a(span(function_.prefix)..'<wbr>'..function_.name, '#'..function_.fullname, function_.fullname), 'function_heading'))
-    A(p(getDescription(function_), 'function_description'))
-
-    for _, variant in ipairs(function_.variants) do
-
-        local function makeList(args, class)
             local argumentList = ''
-            for argIndex, arg in ipairs(args or {}) do
-                argumentList = argumentList..span(arg.name, class)
-                if argIndex ~= #args then
-                    argumentList = argumentList..', '
-                end
+            if #variant.arguments > 0 then
+                argumentList = makeList(variant.arguments, 'arguments')
+                argumentList = ' '..argumentList..' '
             end
-            return argumentList
+
+            A(p(span(span(returnList..function_.prefix..'<wbr>'..function_.name..'('..argumentList..')', 'relative'), 'synopsis_background'), 'synopsis')) -- Relative position span is so background doesn't cover font descenders.
+
+            local description = getDescription(variant)
+            if description then
+                A(p(description, 'variant_description'))
+            end
+
+            A(_table('ra_table'))
+            A(doReturnsAndArguments(variant, 'returns'))
+            A(doReturnsAndArguments(variant, 'arguments'))
+            A(_table())
         end
-
-        local returnList = ''
-        if #variant.returns > 0 then
-            returnList = makeList(variant.returns, 'returns')
-            returnList = returnList..' = '
-        end
-
-        local argumentList = ''
-        if #variant.arguments > 0 then
-            argumentList = makeList(variant.arguments, 'arguments')
-            argumentList = ' '..argumentList..' '
-        end
-
-        A(p(span(span(returnList..function_.prefix..'<wbr>'..function_.name..'('..argumentList..')', 'relative'), 'synopsis_background'), 'synopsis')) -- Relative position span is so background doesn't cover font descenders.
-
-        local description = getDescription(variant)
-        if description then
-            A(p(description, 'variant_description'))
-        end
-
-        A(_table('ra_table'))
-        A(doReturnsAndArguments(variant, 'returns'))
-        A(doReturnsAndArguments(variant, 'arguments'))
-        A(_table())
+        A(div()) -- section
     end
-    A(div()) -- section
-end
 end
 
 local function doEnums(enums)
@@ -344,8 +352,8 @@ end
 
 local function main()
     A([[<html><head>
-        <title>L&Ouml;VE ]]..api.version..[[ Reference</title>
-        <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">]])
+    <title>L&Ouml;VE ]]..api.version..[[ Reference</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">]])
     if true then
         local file = io.open("pure-love.css")
         A(style(file:read("*a")))
@@ -493,17 +501,17 @@ local function main()
 end
 
 local function f(lc)
-  languageCode = lc
-  output = {}
-  main(languageCode)
-  local file = io.open((languageCode or 'index')..'.html', 'w')
-  local out = table.concat(output)
-  if FAST_MODE then
-      file:write(out)
-  else
-      file:write((out:gsub('Ö', '&Ouml;'):gsub('é', '&eacute;'):gsub('€', '&euro;')))
-  end
-  file:close()
+    languageCode = lc
+    output = {}
+    main(languageCode)
+    local file = io.open((languageCode or 'index')..'.html', 'w')
+    local out = table.concat(output)
+    if FAST_MODE then
+        file:write(out)
+    else
+        file:write((out:gsub('Ö', '&Ouml;'):gsub('é', '&eacute;'):gsub('€', '&euro;')))
+    end
+    file:close()
 end
 
 f()
