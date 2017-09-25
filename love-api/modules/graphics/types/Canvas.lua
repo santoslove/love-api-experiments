@@ -283,7 +283,7 @@ return {
             name = 'getWidth',
             description = 'Gets the width of the Canvas.',
             descriptiont = {
-                de = 'Gibt die Breite des Canvas (Deutsch) zurück.',
+                de = 'Gibt die Breite des Canvas zurück.',
                 fr = 'Obtient la largeur de la Toile. [auto]',
                 ja = 'Canvas の幅を取得します。',
                 ko = 'Canvas의 너비를 가져옵니다. [auto]',
@@ -292,7 +292,7 @@ return {
             },
             minidescription = 'Gets the width of the Canvas.',
             minidescriptiont = {
-                de = 'Gibt die Breite des Canvas (Deutsch) zurück. [auto]',
+                de = 'Gibt die Breite des Canvas zurück. [auto]',
                 fr = 'Obtient la largeur de la Toile. [auto]',
                 ja = 'Canvas の幅を取得します。',
                 ko = 'Canvas의 너비를 가져옵니다. [auto]',
