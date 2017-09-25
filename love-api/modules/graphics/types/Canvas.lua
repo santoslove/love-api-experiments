@@ -497,7 +497,7 @@ return {
             descriptiont = {
                 de = 'Zeichnet mit Hilfe einer Funktion in einen Offscreen-Buffer.',
                 fr = 'Rendez-vous sur le canevas en utilisant une fonction. [auto]',
-                ja = 'Canvas へ表示するために関数を使用します。\n\nこれは love.graphics.setCanvas への略記法であり、\n\n&lt;source lang="lua"&gt;\n\ncanvas:renderTo( func )\n\n&lt;/source&gt;\n\nは下記と同じです。\n\n&lt;source lang="lua"&gt;\n\nlove.graphics.setCanvas( canvas )\n\nfunc()\n\nlove.graphics.setCanvas()\n\n&lt;/source&gt;',
+                ja = 'Canvas へ表示するために関数を使用します。\n\nこれは love.graphics.setCanvas への略記法であり、\n\n\n\ncanvas:renderTo( func )\n\n\n\nは下記と同じです。\n\n\n\nlove.graphics.setCanvas( canvas )\n\nfunc()\n\nlove.graphics.setCanvas()\n\n',
                 ko = '함수를 사용하여 Canvas로 렌더링합니다. [auto]',
                 pt = 'Render para o Canvas usando uma função. [auto]',
                 ru = 'Выделите Canvas с помощью функции. [auto]',

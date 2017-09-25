@@ -30,7 +30,7 @@ return {
                 ja = 'イベントキューを消去します。',
                 ko = '이벤트 큐를 비웁니다.',
                 pt = 'Limpa a fila de eventos.',
-                ru = 'Очистка очереди событий.\n\n&lt;source lang="lua"&gt;\n\nlove.event.clear()\n\n&lt;/source&gt;',
+                ru = 'Очистка очереди событий.\n\n\n\nlove.event.clear()\n\n',
             },
             minidescription = 'Clears the event queue.',
             minidescriptiont = {

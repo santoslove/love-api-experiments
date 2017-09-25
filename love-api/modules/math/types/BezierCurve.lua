@@ -8,7 +8,7 @@ return {
         fr = 'Un objet de courbe de Béryier qui peut évaluer et rendre les courbes de Béryier de degré arbitraire. [auto]',
         ja = 'ベジェ曲線オブジェクトは任意の次数でベジェ曲線の評価および表示を行います。ベジェ曲線についての詳細な情報は Wikipedia にあるこの素晴らしい記事を調べてみてください。',
         ko = '베지에 곡선입니다.\n\n이 곡선에 대한 자세한 정보는 위키백과의 베지에 곡선 항목을 참조하세요.',
-        pt = 'Um objeto de curvatura de BÃ © zier que pode avaliar e render as curvas de Béryier de grau arbitrário. [auto]',
+        pt = 'Um objeto de curvatura de Bézier que pode avaliar e render as curvas de Béryier de grau arbitrário. [auto]',
         ru = 'Объект кривая Безье, который может определять количество и создавать кривые Безье произвольной степени.\n\nДля получения более подробной информации о кривых Безье посетите эту отличную статью в Википедии.',
     },
     minidescription = 'A Bézier curve object that can evaluate and render Bézier curves of arbitrary degree.',
@@ -17,7 +17,7 @@ return {
         fr = 'Un objet de courbe de Béryier qui peut évaluer et rendre les courbes de Béryier de degré arbitraire. [auto]',
         ja = 'ベジェ曲線オブジェクトは任意の次数でベジェ曲線の評価および表示を行います。ベジェ曲線についての詳細な情報は Wikipedia にあるこの素晴らしい記事を調べてみてください。',
         ko = '베지에 곡선입니다. [auto]',
-        pt = 'Um objeto de curvatura de BÃ © zier que pode avaliar e render as curvas de Béryier de grau arbitrário. [auto]',
+        pt = 'Um objeto de curvatura de Bézier que pode avaliar e render as curvas de Béryier de grau arbitrário. [auto]',
         ru = 'Объект кривая Безье, который может определять количество и создавать кривые Безье произвольной степени. [auto]',
     },
     parenttype = 'Object',
@@ -36,7 +36,7 @@ return {
                 fr = 'Évaluez la courbe de Bésier au paramètre t. Le paramètre doit être compris entre 0 et 1 (inclus).\n\nCette fonction peut être utilisée pour déplacer des objets le long des chemins ou des paramètres interpolés. Cependant, il ne doit pas être utilisé pour rendre la courbe, voir BezierCurve: render à cet effet. [auto]',
                 ko = '매개 변수 t에서 Bzier 곡선을 계산하십시오. 매개 변수는 0과 1 사이에 있어야합니다 (포함).\n\n이 함수는 경로 또는 트윈 매개 변수를 따라 객체를 이동하는 데 사용할 수 있습니다. 그러나 곡선을 렌더링하는 데 사용하면 안됩니다. BezierCurve : render를 참조하십시오. [auto]',
                 pt = 'Avalie a curva de Béry no parâmetro t. O parâmetro deve estar entre 0 e 1 (inclusive).\n\nEsta função pode ser usada para mover objetos ao longo de caminhos ou parâmetros interpolados. No entanto, não deve ser usado para renderizar a curva, veja BezierCurve: render para esse propósito. [auto]',
-                ru = 'Оцените кривую BÃ © zier при параметре t. Параметр должен быть между 0 и 1 (включительно).\n\nЭта функция может использоваться для перемещения объектов по дорожкам или параметрам твинов. Однако он не должен использоваться для визуализации кривой, см. «Безье»: рендеринг для этой цели. [auto]',
+                ru = 'Оцените кривую Bézier при параметре t. Параметр должен быть между 0 и 1 (включительно).\n\nЭта функция может использоваться для перемещения объектов по дорожкам или параметрам твинов. Однако он не должен использоваться для визуализации кривой, см. «Безье»: рендеринг для этой цели. [auto]',
             },
             minidescription = 'Evaluate Bézier curve at parameter t.',
             minidescriptiont = {
@@ -44,7 +44,7 @@ return {
                 fr = 'Évaluez la courbe de Bésier au paramètre t. [auto]',
                 ko = '매개 변수 t에서 Bzier 곡선을 계산하십시오. [auto]',
                 pt = 'Avalie a curva de Béry no parâmetro t. [auto]',
-                ru = 'Оцените кривую BÃ © zier при параметре t. [auto]',
+                ru = 'Оцените кривую Bézier при параметре t. [auto]',
             },
             variants = {
                 {
@@ -537,7 +537,7 @@ return {
                 ja = 'love.graphics.line で使用するために、特定の曲線部分に関する座標の一覧を取得します。\n\nこの関数は再帰的細分を使用してベジェ曲線の標本を取得します。 引数 depth を使用して再帰の深度を制御することができます。\n\n与えられた引数に関する曲線位置を知る必要があるだけならば、 BezierCurve:evaluate を使用してください。',
                 ko = 'love.graphics.line과 함께 사용할 곡선의 특정 부분에 대한 좌표 목록을 가져옵니다.\n\n이 함수는 재귀 적 세분을 사용하여 Bzier 곡선을 샘플링합니다. 깊이 매개 변수를 사용하여 재귀 깊이를 제어 할 수 있습니다.\n\n매개 변수가있는 곡선의 위치를 ​​알아야하는 경우 BezierCurve : evaluate을 사용하십시오. [auto]',
                 pt = 'Obter uma lista de coordenadas em uma parte específica da curva, para ser usado com love.graphics.line.\n\nEsta função analisa a curva de Béry usando uma subdivisão recursiva. Você pode controlar a profundidade de recursão usando o parâmetro de profundidade.\n\nSe você precisa apenas conhecer a posição na curva, dê um parâmetro, use BezierCurve: avaliar. [auto]',
-                ru = 'Получить список координат на определенной части кривой, которая будет использоваться с love.graphics.line.\n\nЭта функция отображает кривую BÃ © zier с использованием рекурсивного подразделения. Вы можете управлять глубиной рекурсии с помощью параметра глубины.\n\nЕсли вам просто нужно знать положение на кривой с заданным параметром, используйте BezierCurve: оцените. [auto]',
+                ru = 'Получить список координат на определенной части кривой, которая будет использоваться с love.graphics.line.\n\nЭта функция отображает кривую Bézier с использованием рекурсивного подразделения. Вы можете управлять глубиной рекурсии с помощью параметра глубины.\n\nЕсли вам просто нужно знать положение на кривой с заданным параметром, используйте BezierCurve: оцените. [auto]',
             },
             minidescription = 'Get a list of coordinates on a specific part of the curve, to be used with love.graphics.line.',
             minidescriptiont = {
@@ -828,7 +828,7 @@ return {
                 fr = 'Déplacez la courbe de Béryier par un décalage. [auto]',
                 ja = 'ベジェ曲線を支距により移動します。',
                 ko = '곡선을 상대적인 위치로 이동시킵니다.',
-                pt = 'Mova a curva de BÃ © zier por um deslocamento. [auto]',
+                pt = 'Mova a curva de Bézier por um deslocamento. [auto]',
                 ru = 'Перемещает кривую Безье по смещению.',
             },
             minidescription = 'Move the Bézier curve by an offset.',
@@ -837,7 +837,7 @@ return {
                 fr = 'Déplacez la courbe de Béryier par un décalage. [auto]',
                 ja = 'ベジェ曲線を支距により移動します。',
                 ko = '곡선을 상대적인 위치로 이동시킵니다. [auto]',
-                pt = 'Mova a curva de BÃ © zier por um deslocamento. [auto]',
+                pt = 'Mova a curva de Bézier por um deslocamento. [auto]',
                 ru = 'Перемещает кривую Безье по смещению. [auto]',
             },
             variants = {
