@@ -1,6 +1,4 @@
---require('mobdebug').start()
-
-local api = require('love-api.love_api')
+local api = require('love-api.love-api')
 
 local function clean(s)
     local function literalize(str)
