@@ -6,7 +6,7 @@ return {
     descriptiont = {
         de = 'Ermöglicht es Ihnen, Körper, die durch Riemenscheiben verbunden sind, zu simulieren. [auto]',
         fr = 'Permet de simuler des corps connectés par des poulies. [auto]',
-        ja = '滑車を通して接続されている物体の模擬を可能にします。\n\nFile:physicsJointPulley.png',
+        ja = '滑車を通して接続されている物体の模擬を可能にします。',
         ko = '풀리를 통해 연결된 시체를 시뮬레이션 할 수 있습니다. [auto]',
         pt = 'Permite simular concessões entre corpos através de polias.',
         ru = 'Позволяет симулировать тела, соединенные шкивом.',

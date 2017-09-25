@@ -6,7 +6,7 @@ return {
     descriptiont = {
         de = 'Beschränkt die Relativbewegung zwischen Bodies auf eine gemeinsame Achse. [auto]',
         fr = 'Limite le mouvement relatif entre les corps à un axe partagé. [auto]',
-        ja = '共有軸において物体間の相対運動を制限します。\n\nFile:physicsJointPrismatic.png',
+        ja = '共有軸において物体間の相対運動を制限します。',
         ko = 'Bodies 간의 상대 모션을 하나의 공유 축으로 제한합니다. [auto]',
         pt = 'Restringe movimentos relativos entre corpos para somente um eixo compartilhado.',
         ru = 'Ограничивает движение между телами по одной общей оси.',

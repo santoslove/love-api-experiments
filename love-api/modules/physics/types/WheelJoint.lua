@@ -6,7 +6,7 @@ return {
     descriptiont = {
         de = 'Beschränkt einen Punkt auf den zweiten Körper auf eine Linie auf dem ersten Körper. [auto]',
         fr = 'Limite un point sur le second corps à une ligne sur le premier corps. [auto]',
-        ja = '第一物体の線から第二物体の地点を制限します。\n\nFile:physicsJointWheel.png',
+        ja = '第一物体の線から第二物体の地点を制限します。',
         ko = '두 번째 본문의 한 점을 첫 번째 본문의 한 행으로 제한합니다. [auto]',
         pt = 'Restringe um ponto no segundo corpo para uma linha no primeiro corpo. [auto]',
         ru = 'Ограничивает точку на втором теле на линию на первом теле. [auto]',

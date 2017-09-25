@@ -4,7 +4,7 @@ return {
     descriptiont = {
         de = 'Wie das Bild in einem Quad mit einer größeren Quad Größe als Bildgröße verpackt. Dies wirkt sich auch darauf aus, wie Meshes mit Texturkoordinaten, die außerhalb des Bereichs von {0, 1} liegen, gezeichnet werden und die von der Texel Shader-Funktion zurückgegebene Farbe bei der Verwendung von Texturkoordinaten außerhalb des Bereichs von {0, 1} verwendet wird. [auto]',
         fr = 'Comment l\'image s\'emballe dans un Quad avec une taille de quad plus grande que la taille de l\'image. Cela affecte également la façon dont les mailles avec des coordonnées de texture qui sont en dehors de la plage de {0, 1} sont dessinées et la couleur renvoyée par la fonction Texel Shader lors de l\'utilisation pour échantillonner à partir de coordonnées de texture en dehors de la plage de {0, 1}. [auto]',
-        ja = '画像尺度より大きい四辺形の尺度で Quad の内側へ画像を加工する方法を指定します。同様に Mesh をテクスチャ座標 1 の範囲外で描画する方法、および 1 の範囲外でテクスチャ座標のサンプルを使用するときに Texel シェーダー関数で色を返すための方法に影響します。\n\nFile:ComparisonWraps.png',
+        ja = '画像尺度より大きい四辺形の尺度で Quad の内側へ画像を加工する方法を指定します。同様に Mesh をテクスチャ座標 1 の範囲外で描画する方法、および 1 の範囲外でテクスチャ座標のサンプルを使用するときに Texel シェーダー関数で色を返すための方法に影響します。',
         ko = '이미지가 이미지 크기보다 큰 4 배 크기의 쿼드 내에서 어떻게 랩핑됩니까? 이것은 {0, 1}의 범위 밖에있는 텍스처 좌표로 메쉬를 그린 방법과 {0, 1} 범위를 벗어난 텍스쳐 좌표로 샘플링 할 때 텍셀 셰이더 함수에 의해 반환되는 색에 영향을 미칩니다. [auto]',
         pt = 'Como uma imagem será acondicionada dentro de um Quad largo.',
         ru = 'Как изображение покрывает область большого Quad\'а.',

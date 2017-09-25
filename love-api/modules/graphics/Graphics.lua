@@ -2783,7 +2783,7 @@ return {
                     description = 'Create a new instance of the default font (Vera Sans) with a custom size.',
                     descriptiont = {
                         de = 'Diese Variante nutzt den Standard-Font (Vera Sans) mit einer benutzerdefinierten Größe.',
-                        jp = 'インスタンスとして標準フォント (Vera Sans) の大きさを任意で指定したものを新規作成します。\n\n\n\nfont = love.graphics.newFont( size )\n\n',
+                        jp = 'インスタンスとして標準フォント (Vera Sans) の大きさを任意で指定したものを新規作成します。',
                         ko = '사용자 정의 크기와 기본 글꼴 (베라 산세)의 새로운 인스턴스를 생성 . [auto]',
                         pt = 'Esta variante usa a fonte padrão (Vera Sans) com um tamanho personalizado.',
                         ru = 'Этот вариант использует стандартный шрифт (Vera Sans), но с определенным размером.',
@@ -6050,7 +6050,7 @@ return {
             name = 'setPointSize',
             description = 'Sets the point size.',
             descriptiont = {
-                de = 'Bestimmt die Größe mit welcher Punkte gezeichnet werden.\n\n\n\nlove.graphics.setPointSize( size )\n\n',
+                de = 'Bestimmt die Größe mit welcher Punkte gezeichnet werden.',
                 fr = 'Définit la taille du point. [auto]',
                 ja = '点の大きさを設定します。',
                 ko = '포인트 크기를 설정합니다. [auto]',

@@ -6,7 +6,7 @@ return {
     descriptiont = {
         de = 'Erlaube zwei Körper, um einen gemeinsamen Punkt zu drehen. [auto]',
         fr = 'Autoriser deux corps à tourner autour d\'un point partagé. [auto]',
-        ja = '二つの物体にて共有される地点を中心として回転できるようにします。\n\nFile:physicsJointRevolute.png',
+        ja = '二つの物体にて共有される地点を中心として回転できるようにします。',
         ko = '두 개체가 공유 지점을 중심으로 회전하도록 허용합니다. [auto]',
         pt = 'Permite que dois corpos rotacionem sobre um ponto fixo compartilhado.\n\nCriado com love.physics.newRevoluteJoint. ',
         ru = 'Позволяет вращать тела относительно общей точки.\n\nСоздается функцией love.physics.newRevoluteJoint. ',

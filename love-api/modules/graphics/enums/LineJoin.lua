@@ -4,8 +4,8 @@ return {
     descriptiont = {
         de = 'Line-Join-Stil. [auto]',
         fr = 'Style de jointure de ligne. [auto]',
-        ja = '線の連結方法。\n\nFile:Linejoin.png',
-        ko = '조인 유형입니다.\n\nFile:Linejoin.png\n\n;miter:\n\n;bevel:\n\n;none:\n\n* parent::love.graphics (한국어)\n\n* love.graphics.setLineJoin (한국어)\n\nCategory:Enums',
+        ja = '線の連結方法。',
+        ko = '조인 유형입니다.',
         pt = 'Estilo de junção de linha. [auto]',
         ru = 'Стиль линии соединения. [auto]',
     },

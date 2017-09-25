@@ -617,7 +617,7 @@ return {
             descriptiont = {
                 de = 'Ruft eine Funktion für jede Leuchte innerhalb des angegebenen Bereichs auf. [auto]',
                 fr = 'Appelle une fonction pour chaque appareil dans la zone spécifiée. [auto]',
-                ja = '境界ボックスに重なり合っているものを検索することで指定された領域内にある各取付具に対して関数を呼び出します (Fixture:getBoundingBox)。\n\nFile:WorldqueryBoundingBox.png',
+                ja = '境界ボックスに重なり合っているものを検索することで指定された領域内にある各取付具に対して関数を呼び出します (Fixture:getBoundingBox)。',
                 ko = '지정된 영역 안의 각 조명기에 대한 함수를 호출합니다. [auto]',
                 pt = 'Chama uma função para cada dispositivo dentro da área especificada. [auto]',
                 ru = 'Вызывает функцию для каждого прибора внутри указанной области. [auto]',

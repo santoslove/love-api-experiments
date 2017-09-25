@@ -6,7 +6,7 @@ return {
     descriptiont = {
         de = 'Hält die Körper so zusammen, dass sie wie Zahnräder wirken. [auto]',
         fr = 'Maintient les corps ensemble de telle manière qu\'ils agissent comme des engrenages. [auto]',
-        ja = '伝動装置の動作と同様の方法で物体を協調させます。\n\nFile:physicsJointGear.png',
+        ja = '伝動装置の動作と同様の方法で物体を協調させます。',
         ko = '시체를 기어처럼 작동하도록 유지합니다. [auto]',
         pt = 'Mantém corpos juntos de tal forma que eles atual como engrenagens.',
         ru = 'Держит тела таким образом, что они действуют как шестеренки.',
