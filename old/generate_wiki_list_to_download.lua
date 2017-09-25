@@ -1,4 +1,4 @@
-local api = require('love_api')
+local api = require('love-api.love-api')
 
 local function output(s)
     print('https://www.love2d.org/wiki/Special:Export/'..s)--..'_('..language..')')
