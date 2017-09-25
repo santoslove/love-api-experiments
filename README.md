@@ -1,5 +1,13 @@
 # love-api-experiments
 
+* [English](https://santoslove.github.io/love-api-experiments/reference/)
+* [Deutsch](https://santoslove.github.io/love-api-experiments/reference/de)
+* [Français](https://santoslove.github.io/love-api-experiments/reference/fr)
+* [日本語](https://santoslove.github.io/love-api-experiments/reference/ja)
+* [한국어](https://santoslove.github.io/love-api-experiments/reference/ko)
+* [Português](https://santoslove.github.io/love-api-experiments/reference/pt)
+* [Русский](https://santoslove.github.io/love-api-experiments/reference/ru)
+
 This is an experimental fork of [love-api](https://github.com/love2d-community/love-api/).
 
 It has a similar structure to the original with the following changes:
