@@ -2,6 +2,8 @@ Step 1: Download "export" files from the wiki which looks like this:
 https://www.love2d.org/wiki/Special:Export/love.graphics.draw
 and put them into the "wiki" folder (except for modules).
 
+"wiki.zip" contains files I've downloaded if you'd like to just test this out.
+
 Example script for generating URLs to download:
 
 ```lua
