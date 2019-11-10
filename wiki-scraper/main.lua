@@ -131,7 +131,9 @@ local function getFunctionDescriptions(content, NAME)
             key = 'arguments'
             t[key] = {}
         elseif line:match('%{%{oldin') then
-            old = true
+            old = true            
+        elseif line:match('%{%{newin') then
+            old = false
         elseif not key and not line:match('%{%{') and not line:match('^[%s\n]*$') and not line:match('^%=.+%=$') and not line:match('^%[%[File') then
             if clean(line) then
               table.insert(functionDescription, clean(line))
