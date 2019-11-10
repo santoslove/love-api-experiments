@@ -18,9 +18,9 @@ for _, v in pairs(api.allfullnames) do
         elseif name:match('File:') then
             name = name:gsub('^File:(.+)', '(File):%1')
         end
+        
+        print('https://www.love2d.org/wiki/Special:Export/'..name)
     end
-    
-    print('https://www.love2d.org/wiki/Special:Export/'..name)
 end
 ```
 
